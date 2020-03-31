@@ -13,9 +13,11 @@
 
 ## Notes
 
-I'm pretty new to Flutter so don't assume everything here is done correctly or in the best way. Things I'm not sure about include transitioning to pages and whether or not is ok to mutate the comment object when editing. It seems to work but in react I would create a new comment in the comments array and replace the old one but I'm not sure if this is required for Flutter.
+I'm pretty new to Flutter so don't assume everything here is done correctly or in the best way especially the app structure - it was knocked up pretty quickly.
 
-The lag in the preview image is not a reflection of the code but due to being run in an emulator.
+Things I'm not sure about include transitioning to pages and whether or not is ok to mutate the comment object when editing. It seems to work but in react I would create a new comment in the comments array and replace the old one but I'm not sure if this is required for Flutter.
+
+NB: The lag in the preview image is not a reflection of the code but due to being run in an emulator.
 
 ## Latest version
 
