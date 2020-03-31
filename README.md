@@ -1,4 +1,4 @@
-# Flutter Coments - A test of Flutter to learn routing, screens and forms
+# Flutter Comments - A test of Flutter to learn routing, screens and forms
 
 **(flutter_comments)**
 
