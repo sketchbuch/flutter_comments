@@ -1,0 +1,76 @@
+{
+  "@@last_modified": "2020-03-31T10:49:58.667690",
+  "addButton": "Add a new comment",
+  "@addButton": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "anonymous": "Anonymous",
+  "@anonymous": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "commentListEmpty": "You currently have no comments",
+  "@commentListEmpty": {
+    "description": "The text displayed in the list if there are no comments",
+    "type": "text",
+    "placeholders": {}
+  },
+  "fieldNewAuthorError": "Please enter your name",
+  "@fieldNewAuthorError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fieldNewAuthorLabel": "Your name",
+  "@fieldNewAuthorLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fieldNewAuthorPlaceholder": "Who are you?",
+  "@fieldNewAuthorPlaceholder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fieldNewTitleError": "Please enter a title",
+  "@fieldNewTitleError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fieldNewTitleLabel": "Title",
+  "@fieldNewTitleLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fieldNewBodyError": "Please enter your comment",
+  "@fieldNewBodyError": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "fieldNewBodyLabel": "Comment",
+  "@fieldNewBodyLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hello": "Hello",
+  "@hello": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "newSubmit": "Create Comment",
+  "@newSubmit": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "title": "Flutter Comments",
+  "@title": {
+    "description": "The list screen title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleNew": "New Comment",
+  "@titleNew": {
+    "description": "The new comment screen title",
+    "type": "text",
+    "placeholders": {}
+  }
+}
