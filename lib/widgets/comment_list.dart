@@ -1,5 +1,7 @@
 import 'package:flutter_comments/localizations.dart';
 import 'package:flutter_comments/models/comment.dart';
+import 'package:flutter_comments/widgets/comment_detail.dart';
+import 'package:flutter_comments/widgets/comment_edit.dart';
 import 'package:flutter_comments/widgets/comment_list_empty.dart';
 import 'package:flutter_comments/widgets/comment_new.dart';
 import 'package:flutter/material.dart';
@@ -17,21 +19,53 @@ class CommentListState extends State<CommentList> {
       context,
       MaterialPageRoute(builder: (context) => CommentNew(comments: comments)),
     );
-/*     setState(() {
-      comments.add(Comment(title: 'Item ' + comments.length.toString(), author: 'Anonymous'));
-    }); */
+  }
+
+  void _editComment(Comment comment) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => CommentEdit(comment: comment)),
+    );
+  }
+
+  void _viewComment(Comment comment) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => CommentDetail(comment: comment)),
+    );
   }
 
   Widget getContent() {
-    if (this.comments.length > 0) {
-      return ListView.builder(
-        itemCount: this.comments.length,
+    if (comments.length > 0) {
+      return ListView.separated(
+        itemCount: comments.length,
+        separatorBuilder: (context, index) => Divider(height: 1.0, color: Colors.grey),
         itemBuilder: (context, index) {
-          final comment = this.comments[index];
+          final comment = comments[index];
 
           return ListTile(
+            key: Key('listitem-' + comment.id),
+            contentPadding: EdgeInsets.only(left: 15.0, right: 15.0, top: 5.0, bottom: 5.0),
+            subtitle: Text(comment.author.isEmpty ? Trans.of(context).anonymous : comment.author),
             title: Text(comment.title),
-            subtitle: Text(comment.created.toString()),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(
+                    Icons.edit,
+                    size: 20.0,
+                    color: Colors.black54,
+                  ),
+                  onPressed: () {
+                    _editComment(comment);
+                  },
+                ),
+              ],
+            ),
+            onTap: () {
+              _viewComment(comment);
+            },
           );
         },
       );

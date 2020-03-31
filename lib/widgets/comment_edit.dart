@@ -2,32 +2,32 @@ import 'package:flutter_comments/localizations.dart';
 import 'package:flutter_comments/models/comment.dart';
 import 'package:flutter/material.dart';
 
-class CommentNew extends StatefulWidget {
-  List<Comment> comments = [];
+class CommentEdit extends StatefulWidget {
+  final Comment comment;
 
-  CommentNew({Key key, @required this.comments}) : super(key: key);
+  CommentEdit({Key key, @required this.comment}) : super(key: key);
 
   @override
-  createState() => new CommentNewState();
+  createState() => new CommentEditState();
 }
 
-class CommentNewState extends State<CommentNew> {
+class CommentEditState extends State<CommentEdit> {
   final _formKey = GlobalKey<FormState>();
-  final _comment = Comment();
 
   void onSubmit() {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
-      widget.comments.add(_comment);
       Navigator.pop(context);
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    Comment curComment = widget.comment;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(Trans.of(context).titleNew),
+        title: Text(Trans.of(context).titleEdit),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -41,7 +41,8 @@ class CommentNewState extends State<CommentNew> {
                     hintText: Trans.of(context).fieldNewAuthorPlaceholder,
                     labelText: Trans.of(context).fieldNewAuthorLabel,
                   ),
-                  onSaved: (val) => setState(() => _comment.author = val),
+                  onSaved: (val) => setState(() => curComment.author = val),
+                  initialValue: curComment.author,
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 20.0),
@@ -55,7 +56,8 @@ class CommentNewState extends State<CommentNew> {
                       }
                       return null;
                     },
-                    onSaved: (val) => setState(() => _comment.title = val),
+                    onSaved: (val) => setState(() => curComment.title = val),
+                    initialValue: curComment.title,
                   ),
                 ),
                 Padding(
@@ -71,7 +73,8 @@ class CommentNewState extends State<CommentNew> {
                       return null;
                     },
                     maxLines: 3,
-                    onSaved: (val) => setState(() => _comment.body = val),
+                    onSaved: (val) => setState(() => curComment.body = val),
+                    initialValue: curComment.body,
                   ),
                 ),
                 Padding(
@@ -80,7 +83,7 @@ class CommentNewState extends State<CommentNew> {
                     onPressed: () {
                       onSubmit();
                     },
-                    child: Text(Trans.of(context).newSubmit),
+                    child: Text(Trans.of(context).editSubmit),
                   ),
                 ),
               ],

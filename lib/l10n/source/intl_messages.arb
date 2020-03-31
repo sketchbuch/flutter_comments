@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-03-31T10:49:58.667690",
+  "@@last_modified": "2020-03-31T17:47:40.955846",
   "addButton": "Add a new comment",
   "@addButton": {
     "type": "text",
@@ -15,6 +15,21 @@
     "description": "The text displayed in the list if there are no comments",
     "type": "text",
     "placeholders": {}
+  },
+  "detailBy": "{author} on {createdDate}",
+  "@detailBy": {
+    "type": "text",
+    "placeholders": {
+      "author": {},
+      "createdDate": {}
+    }
+  },
+  "detailUpdatedOn": "Updated {updateddDate}",
+  "@detailUpdatedOn": {
+    "type": "text",
+    "placeholders": {
+      "updateddDate": {}
+    }
   },
   "fieldNewAuthorError": "Please enter your name",
   "@fieldNewAuthorError": {
@@ -56,6 +71,11 @@
     "type": "text",
     "placeholders": {}
   },
+  "editSubmit": "Update Comment",
+  "@editSubmit": {
+    "type": "text",
+    "placeholders": {}
+  },
   "newSubmit": "Create Comment",
   "@newSubmit": {
     "type": "text",
@@ -70,6 +90,12 @@
   "titleNew": "New Comment",
   "@titleNew": {
     "description": "The new comment screen title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "titleEdit": "Edit Comment",
+  "@titleEdit": {
+    "description": "The edit comment screen title",
     "type": "text",
     "placeholders": {}
   }

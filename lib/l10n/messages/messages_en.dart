@@ -19,11 +19,18 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static m0(author, createdDate) => "${author} on ${createdDate}";
+
+  static m1(updateddDate) => "Updated ${updateddDate}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "addButton" : MessageLookupByLibrary.simpleMessage("Add a new comment"),
     "anonymous" : MessageLookupByLibrary.simpleMessage("Anonymous"),
     "commentListEmpty" : MessageLookupByLibrary.simpleMessage("You currently have no comments"),
+    "detailBy" : m0,
+    "detailUpdatedOn" : m1,
+    "editSubmit" : MessageLookupByLibrary.simpleMessage("Update Comment"),
     "fieldNewAuthorError" : MessageLookupByLibrary.simpleMessage("Please enter your name"),
     "fieldNewAuthorLabel" : MessageLookupByLibrary.simpleMessage("Your name"),
     "fieldNewAuthorPlaceholder" : MessageLookupByLibrary.simpleMessage("Who are you?"),
@@ -34,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello" : MessageLookupByLibrary.simpleMessage("Hello"),
     "newSubmit" : MessageLookupByLibrary.simpleMessage("Create Comment"),
     "title" : MessageLookupByLibrary.simpleMessage("Flutter Comments"),
+    "titleEdit" : MessageLookupByLibrary.simpleMessage("Edit Comment"),
     "titleNew" : MessageLookupByLibrary.simpleMessage("New Comment")
   };
 }

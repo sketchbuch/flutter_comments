@@ -34,6 +34,22 @@ class Trans {
         name: 'commentListEmpty', desc: 'The text displayed in the list if there are no comments');
   }
 
+  String detailBy(String author, String createdDate) {
+    return Intl.message(
+      '$author on $createdDate',
+      name: 'detailBy',
+      args: [author, createdDate],
+    );
+  }
+
+  String detailUpdatedOn(String updateddDate) {
+    return Intl.message(
+      'Updated $updateddDate',
+      name: 'detailUpdatedOn',
+      args: [updateddDate],
+    );
+  }
+
   String get fieldNewAuthorError {
     return Intl.message('Please enter your name', name: 'fieldNewAuthorError');
   }
@@ -66,6 +82,10 @@ class Trans {
     return Intl.message('Hello', name: 'hello');
   }
 
+  String get editSubmit {
+    return Intl.message('Update Comment', name: 'editSubmit');
+  }
+
   String get newSubmit {
     return Intl.message('Create Comment', name: 'newSubmit');
   }
@@ -76,6 +96,10 @@ class Trans {
 
   String get titleNew {
     return Intl.message('New Comment', name: 'titleNew', desc: 'The new comment screen title');
+  }
+
+  String get titleEdit {
+    return Intl.message('Edit Comment', name: 'titleEdit', desc: 'The edit comment screen title');
   }
 }
 
